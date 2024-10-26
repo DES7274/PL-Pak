@@ -1,15 +1,20 @@
 def r(a):
-    if len(a) == 0:
-        return a
-    u=sum (a)
-    c = len(a)
-    o = u / c
+
+    no= [x for x in a if x != 0]
+
+    if no:
+        av = sum(no) / len(no)
+    else:
+        av= 0
+
     for i in range(len(a)):
         if a[i] == 0:
-            a=[i] = o
+            a[i] = av
 
     return a
-Q=int(input("введите длину списка"))
-n= [float(input("введите числа списка")) for b in range(Q)]
-re = r(n)
-print(re)
+
+
+n= int (input("введите длину списка"))
+c = [float(input("введите числа ")) for  x in range(n)]
+up = r(c)
+print(up)
